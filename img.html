@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efecto Hover con Difuminado</title>
+  <link rel="stylesheet" href="css/main-tw.css">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  
+  <!-- Contenedor principal -->
+ 
+
+  <style>
+    /* Solución CSS personalizada para el efecto de difuminado */
+    .image-container:hover .image-item:not(:hover) {
+      filter: blur(4px);
+    }
+    
+    /* Aseguramos que la imagen sobre la que pasamos el cursor no se difumine */
+    .image-item:hover {
+      filter: blur(0) !important;
+      z-index: 10;
+    }
+  </style>
+
+  <!-- Versión alternativa usando CSS personalizado -->
+  <div class="image-container mt-20 flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
+    <div class="image-item relative">
+      <img 
+        src="/placeholder.svg?height=300&width=300" 
+        alt="Imagen 1" 
+        class="w-64 h-64 object-cover rounded-lg shadow-md transition-all duration-300"
+      />
+      <div class="absolute inset-0 flex items-center justify-center text-green-500 font-bold text-2xl pointer-events-none">
+        img 1
+      </div>
+    </div>
+    
+    <div class="image-item relative">
+      <img 
+        src="/placeholder.svg?height=300&width=300" 
+        alt="Imagen 2" 
+        class="w-64 h-64 object-cover rounded-lg shadow-md transition-all duration-300"
+      />
+      <div class="absolute inset-0 flex items-center justify-center text-green-500 font-bold text-2xl pointer-events-none">
+        img 2
+      </div>
+    </div>
+    
+    <div class="image-item relative">
+      <img 
+        src="/placeholder.svg?height=300&width=300" 
+        alt="Imagen 3" 
+        class="w-64 h-64 object-cover rounded-lg shadow-md transition-all duration-300"
+      />
+      <div class="absolute inset-0 flex items-center justify-center text-green-500 font-bold text-2xl pointer-events-none">
+        img 3
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
